@@ -1,0 +1,97 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://eopglobal:44311/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://eopglobal:44311/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://eopglobal:44311/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://eopglobal:44311/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="xPRAxC_HDR_PRD_CDS" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="xPRAxC_COMPARE_WCDVLHType" sap:label="Comparing PRD with Golden and Actual(C)" sap:content-version="1">
+				<Key><PropertyRef Name="pr_version_id"/><PropertyRef Name="wcdvlh_no"/><PropertyRef Name="doc_year"/></Key><Property Name="pr_version_id" Type="Edm.Guid" Nullable="false" sap:display-format="UpperCase" sap:label="VERSION_ID"
+					sap:quickinfo="Unique Version ID"/><Property Name="wcdvlh_no" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="WC Volume Document"
+					sap:quickinfo="Well Completion Delivery Volume Header Number"/><Property Name="doc_year" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Fiscal Year"/><Property Name="dn_no" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Delivery Network"
+					sap:quickinfo="Delivery network number"/><Property Name="freq_cd" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Frequency"/><Property Name="prd_dt" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Production Date"
+					sap:quickinfo="Production date"/><Property Name="prd_matnr" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Reclass Material"
+					sap:quickinfo="Production Material"/><Property Name="wl_no" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase" sap:label="Well" sap:quickinfo="Well ID number"/><Property Name="wc_no" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Well Completion"
+					sap:quickinfo="Well Completion Number"/><Property Name="vt_cd" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Volume Type"
+					sap:quickinfo="Volume type code"/><Property Name="invt_dt" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Inventory Date"
+					sap:quickinfo="Inventory date"/><Property Name="orig_mp_no" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Originating MP"
+					sap:quickinfo="Original measurement point number"/><Property Name="orig_mp_doc_no" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Original MP doc.no."
+					sap:quickinfo="Original MP document no"/><Property Name="std_vol" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="std_vol_u" sap:label="Standard Volume"
+					sap:quickinfo="Standard volume"/><Property Name="std_vol_u" Type="Edm.String" MaxLength="3" sap:label="Standard Volume Unit" sap:quickinfo="Standard volume unit"
+					sap:semantics="unit-of-measure"/><Property Name="act_std_vol" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="act_std_unit" sap:label="Standard Volume"
+					sap:quickinfo="Standard volume" sap:creatable="false" sap:updatable="false"/><Property Name="act_std_unit" Type="Edm.String" MaxLength="3" sap:label="Standard Volume Unit" sap:quickinfo="Standard volume unit"
+					sap:semantics="unit-of-measure"/><Property Name="status_value" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase"/><Property Name="std_vol_status" Type="Edm.Byte"/><Property Name="energy" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="energy_u" sap:label="Energy Quantity"
+					sap:quickinfo="Energy quantity" sap:creatable="false" sap:updatable="false"/><Property Name="energy_u" Type="Edm.String" MaxLength="3" sap:label="Energy Unit" sap:quickinfo="Energy quantity unit"
+					sap:semantics="unit-of-measure"/><Property Name="act_energy" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="act_energy_u" sap:label="Energy Quantity"
+					sap:quickinfo="Energy quantity" sap:creatable="false" sap:updatable="false"/><Property Name="act_energy_u" Type="Edm.String" MaxLength="3" sap:label="Energy Unit" sap:quickinfo="Energy quantity unit"
+					sap:semantics="unit-of-measure"/><Property Name="energy_status_value" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase"/><Property Name="energy_status" Type="Edm.Byte"/><Property Name="heat_val" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="heat_val_u" sap:label="Heating Value"
+					sap:quickinfo="Heating value" sap:creatable="false" sap:updatable="false"/><Property Name="heat_val_u" Type="Edm.String" MaxLength="3" sap:label="Heating Value Unit" sap:semantics="unit-of-measure"/><Property Name="act_heat_val" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="act_heat_val_u" sap:label="Heating Value"
+					sap:quickinfo="Heating value" sap:creatable="false" sap:updatable="false"/><Property Name="act_heat_val_u" Type="Edm.String" MaxLength="3" sap:label="Heating Value Unit" sap:semantics="unit-of-measure"/><Property Name="heat_val_status_value" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase"/><Property Name="heat_val_status" Type="Edm.Byte"/><Property Name="days_prod" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Days produced"/><Property Name="act_days_prod" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Days produced"/><Property Name="days_prod_status_value" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase"/><Property Name="days_prod_status" Type="Edm.Byte"/><Property Name="matnr" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number"/><Property Name="act_matnr" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Material"
+					sap:quickinfo="Material Number"/><Property Name="matnr_value" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase"/><Property Name="matnr_status" Type="Edm.Byte"/><Property Name="base_density" Type="Edm.Double" sap:unit="base_density_u" sap:label="Standard Density"
+					sap:quickinfo="Oil/gas density at standard/base conditions" sap:creatable="false" sap:updatable="false"/><Property Name="base_density_u" Type="Edm.String" MaxLength="3" sap:label="Std Density Unit"
+					sap:quickinfo="Unit for densities at standard/base conditions" sap:semantics="unit-of-measure"/><Property Name="act_base_density" Type="Edm.Double" sap:unit="act_base_density_u" sap:label="Standard Density"
+					sap:quickinfo="Oil/gas density at standard/base conditions" sap:creatable="false" sap:updatable="false"/><Property Name="act_base_density_u" Type="Edm.String" MaxLength="3" sap:label="Std Density Unit"
+					sap:quickinfo="Unit for densities at standard/base conditions" sap:semantics="unit-of-measure"/><Property Name="base_density_status_value" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase"/><Property Name="base_density_status" Type="Edm.Byte"/></EntityType>
+			<EntityType Name="xPRAxC_HDR_PRDType" sap:label="Header of Production(C)" sap:content-version="1">
+				<Key><PropertyRef Name="pr_version_id"/><PropertyRef Name="wcdvlh_no"/><PropertyRef Name="doc_year"/></Key><Property Name="Run_alloc_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Upd_gold_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="pr_version_id" Type="Edm.Guid" Nullable="false" sap:display-format="UpperCase" sap:label="VERSION_ID"
+					sap:quickinfo="Unique Version ID"/><Property Name="wcdvlh_no" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"/><Property Name="doc_year" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Fiscal Year"/><Property Name="dn_no" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Delivery Network"
+					sap:quickinfo="Delivery network number"/><Property Name="dn_de" Type="Edm.String" MaxLength="35" sap:label="Delivery Network Nm" sap:quickinfo="Delivery network description"/><Property Name="prd_dt" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Production Date"
+					sap:quickinfo="Production date"/><Property Name="freq_cd" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Frequency"/><Property Name="prd_matnr" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Reclass Material"
+					sap:quickinfo="Production Material"/><Property Name="majpd_cd" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Major Product Code"
+					sap:quickinfo="Major product code"/><Property Name="status_value1" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"/><Property Name="ov_status" Type="Edm.Byte"/><NavigationProperty Name="todet" Relationship="xPRAxC_HDR_PRD_CDS.assoc_9CB5274C4D101557326385E11974ADB3"
+					FromRole="FromRole_assoc_9CB5274C4D101557326385E11974ADB3" ToRole="ToRole_assoc_9CB5274C4D101557326385E11974ADB3"/></EntityType>
+			<Association Name="assoc_9CB5274C4D101557326385E11974ADB3" sap:content-version="1"><End Type="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRDType" Multiplicity="1" Role="FromRole_assoc_9CB5274C4D101557326385E11974ADB3"/><End Type="xPRAxC_HDR_PRD_CDS.xPRAxC_COMPARE_WCDVLHType" Multiplicity="*" Role="ToRole_assoc_9CB5274C4D101557326385E11974ADB3"/></Association>
+			<EntityContainer Name="xPRAxC_HDR_PRD_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="xPRAxC_COMPARE_WCDVLH" EntityType="xPRAxC_HDR_PRD_CDS.xPRAxC_COMPARE_WCDVLHType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="xPRAxC_HDR_PRD" EntityType="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRDType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+				<AssociationSet Name="assoc_9CB5274C4D101557326385E11974ADB3" Association="xPRAxC_HDR_PRD_CDS.assoc_9CB5274C4D101557326385E11974ADB3"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="xPRAxC_HDR_PRD" Role="FromRole_assoc_9CB5274C4D101557326385E11974ADB3"/><End EntitySet="xPRAxC_COMPARE_WCDVLH" Role="ToRole_assoc_9CB5274C4D101557326385E11974ADB3"/></AssociationSet>
+				<FunctionImport Name="xPRAxC_HDR_PRDRun_alloc" ReturnType="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRDType" EntitySet="xPRAxC_HDR_PRD"
+					m:HttpMethod="POST" sap:action-for="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRDType" sap:applicable-path="Run_alloc_ac"><Parameter Name="pr_version_id" Type="Edm.Guid" Mode="In"/><Parameter Name="wcdvlh_no" Type="Edm.String" Mode="In" MaxLength="10"/><Parameter Name="doc_year" Type="Edm.String" Mode="In" MaxLength="4"/></FunctionImport>
+				<FunctionImport Name="xPRAxC_HDR_PRDUpd_gold" ReturnType="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRDType" EntitySet="xPRAxC_HDR_PRD"
+					m:HttpMethod="POST" sap:action-for="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRDType" sap:applicable-path="Upd_gold_ac"><Parameter Name="pr_version_id" Type="Edm.Guid" Mode="In"/><Parameter Name="wcdvlh_no" Type="Edm.String" Mode="In" MaxLength="10"/><Parameter Name="doc_year" Type="Edm.String" Mode="In" MaxLength="4"/></FunctionImport>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRD_CDS_Entities">
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRD_CDS_Entities/xPRAxC_HDR_PRD">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>Run_alloc_ac</PropertyPath>
+								<PropertyPath>Upd_gold_ac</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>Run_alloc_ac</PropertyPath>
+								<PropertyPath>Upd_gold_ac</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="https://eopglobal:44311/sap/opu/odata/pra/C_HDR_PRD_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="https://eopglobal:44311/sap/opu/odata/pra/C_HDR_PRD_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,123 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference Uri="../../../pra/c_hdr_prd_cds/$metadata"><edmx:Include Namespace="C_HDR_PRD_CDS" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="com.sap.pra.c_hdr_prd_cds_van.v1">
+			<Annotations Target="xPRAxC_HDR_PRD_CDS.xPRAxC_COMPARE_WCDVLHType">
+				<Annotation Term="UI.FieldGroup" Qualifier="DaysProd">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Golden Production Days"/><PropertyValue Property="Value" Path="days_prod"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Actual Production Days"/><PropertyValue Property="Value" Path="act_days_prod"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="DaysProd"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="Energy">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Golden Energy"/><PropertyValue Property="Value" Path="energy"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Actual Energy"/><PropertyValue Property="Value" Path="act_energy"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Energy"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="HeatingValue">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Golden Heating Value"/><PropertyValue Property="Value" Path="heat_val"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Actual Heating Value"/><PropertyValue Property="Value" Path="act_heat_val"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="HeatingValue"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="Material">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Golden Material"/><PropertyValue Property="Value" Path="matnr"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Actual Material"/><PropertyValue Property="Value" Path="act_matnr"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Material"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="Volumes">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Golden Volumes"/><PropertyValue Property="Value" Path="std_vol"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Actual Volumes"/><PropertyValue Property="Value" Path="act_std_vol"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Production Volumes"/></Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Production Volumes"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Label" String="Production Volumes"/></Record>
+						</PropertyValue>
+					</Record>
+					<Annotation Term="Core.Messages">
+						<Collection>
+							<Record><PropertyValue Property="message" String="UI.HEADERINFO: TypeNamePlural is mandatory"/><PropertyValue Property="severity" String="error"/></Record>
+						</Collection>
+					</Annotation>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="invt_dt"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="orig_mp_no"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="orig_mp_doc_no"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="wl_no"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="wc_no"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="vt_cd"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Std Vol Status"/><PropertyValue Property="Criticality" Path="std_vol_status"/><PropertyValue Property="Value" Path="status_value"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Energy Status"/><PropertyValue Property="Criticality" Path="energy_status"/><PropertyValue Property="Value" Path="energy_status_value"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Heat Value Status"/><PropertyValue Property="Criticality" Path="heat_val_status"/><PropertyValue Property="Value" Path="heat_val_status_value"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Production Days Status"/><PropertyValue Property="Criticality" Path="days_prod_status"/><PropertyValue Property="Value" Path="days_prod_status_value"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Material No Status"/><PropertyValue Property="Criticality" Path="matnr_status"/><PropertyValue Property="Value" Path="matnr_value"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Base Density Status"/><PropertyValue Property="Criticality" Path="base_density_status"/><PropertyValue Property="Value" Path="base_density_status_value"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRDType/Run_alloc_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRDType/Upd_gold_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRDType">
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="dn_no"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="dn_de"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="prd_dt"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="freq_cd"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="majpd_cd"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataFieldForAction"><PropertyValue Property="Label" String="Update Golden"/><PropertyValue Property="Action" String="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRD_CDS_Entities/xPRAxC_HDR_PRDUpd_gold"/><PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/></Record>
+						<Record Type="UI.DataFieldForAction"><PropertyValue Property="Label" String="Run Allocation"/><PropertyValue Property="Action" String="xPRAxC_HDR_PRD_CDS.xPRAxC_HDR_PRD_CDS_Entities/xPRAxC_HDR_PRDRun_alloc"/><PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Criticality" Path="ov_status"/><PropertyValue Property="Value" Path="status_value1"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="dn_no"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="dn_de"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="prd_dt"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="freq_cd"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="majpd_cd"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>dn_no</PropertyPath>
+						<PropertyPath>prd_dt</PropertyPath>
+						<PropertyPath>freq_cd</PropertyPath>
+						<PropertyPath>majpd_cd</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
